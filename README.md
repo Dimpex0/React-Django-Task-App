@@ -1,3 +1,7 @@
+# First React app
+
+This is my first attempt with React. It uses Django as a backend.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
