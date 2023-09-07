@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+
+  .Tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+
+    .tasks-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+
+      .task {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        width: 100%;
+
+        input {
+          aspect-ratio: 1;
+          width: 40px;
+          cursor: pointer;
+        }
+
+        .info {
+          width: 100%;
+        }
+
+        .title,
+        .description {
+          margin: 0;
+        }
+
+        .title {
+          font-size: 24px;
+        }
+
+        img {
+          aspect-ratio: 1;
+          width: 30px;
+          margin-left: auto;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .Create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+
+    input {
+      all: unset;
+      cursor: pointer;
+      border: 1px solid white;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      height: 40px;
+      width: 100px;
+      text-align: center;
+    }
+    :hover {
+      transition: 300ms;
+      background-color: black;
+      color: white;
+    }
+
+    .loading {
+      aspect-ratio: 1;
+      height: 100%;
+      margin: auto;
+    }
+
+    .err {
+      padding: 10px 20px;
+      border: 1px solid purple;
+    }
+  }
+}
