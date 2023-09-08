@@ -6,6 +6,8 @@ import axios from "axios";
 function Tasks() {
   const { active, setActive } = useContext(FetchContext);
   const [tasks, setTasks] = useState([]);
+  const [extendText, setExtendText] = useState("+");
+  const [openTask, setOpenTask] = useState(null);
 
   useEffect(() => {
     if (active) {
@@ -46,22 +48,37 @@ function Tasks() {
       <div className="tasks-container">
         {tasks &&
           tasks.map((task) => (
-            <div key={task.id} className="task">
-              <input
-                onChange={(e) => handleTaskStatus(e, task.id)}
-                checked={task.complete}
-                type="checkbox"
-              />
-              <div className="info">
-                <p className="title">{task.title}</p>
-                <p className="description">{task.description}</p>
+            <>
+              <div key={task.id} className="task">
+                <input
+                  onChange={(e) => handleTaskStatus(e, task.id)}
+                  checked={task.complete}
+                  type="checkbox"
+                />
+                <div className="info">
+                  <p className="title">{task.title}</p>
+                  <p className="description">{task.description}</p>
+                </div>
+                <div
+                  onClick={(e) => {
+                    if (openTask === task.id) {
+                      setOpenTask(null);
+                    } else {
+                      setOpenTask(task.id);
+                    }
+                  }}
+                  className="extend"
+                >
+                  {openTask === task.id ? "-" : "+"}
+                </div>
+                <img
+                  onClick={() => deleteTask(task.id)}
+                  src={DeleteIcon}
+                  alt=""
+                />
               </div>
-              <img
-                onClick={() => deleteTask(task.id)}
-                src={DeleteIcon}
-                alt=""
-              />
-            </div>
+              {openTask === task.id && <p>{task.description}</p>}
+            </>
           ))}
       </div>
     </div>

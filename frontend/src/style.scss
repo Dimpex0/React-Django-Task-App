@@ -25,6 +25,7 @@ body {
         color: black;
         padding: 10px 20px;
         width: 100%;
+        max-height: 100px;
 
         input {
           aspect-ratio: 1;
@@ -33,7 +34,7 @@ body {
         }
 
         .info {
-          width: 100%;
+          width: 75%;
         }
 
         .title,
@@ -43,6 +44,21 @@ body {
 
         .title {
           font-size: 24px;
+        }
+
+        .description {
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .extend {
+          display: flex;
+          align-items: center;
+          margin: auto;
+          cursor: pointer;
+          font-size: 30px;
+          border: 1px solid black;
+          padding: 1px 10px;
         }
 
         img {
